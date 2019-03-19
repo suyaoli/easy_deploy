@@ -4,6 +4,7 @@ import { NbMenuService, NbSidebarService } from '@nebular/theme';
 import { UserData } from '../../../@core/data/users';
 import { AnalyticsService } from '../../../@core/utils';
 import { LayoutService } from '../../../@core/utils';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'ngx-header',
@@ -16,13 +17,16 @@ export class HeaderComponent implements OnInit {
 
   user: any;
 
-  userMenu = [ { title: 'Log out',link:'/auth/login' }];
+  userMenu = [{ title: 'Log out', link: '/auth/login' }];
 
   constructor(private sidebarService: NbSidebarService,
-              private menuService: NbMenuService,
-              private userService: UserData,
-              private analyticsService: AnalyticsService,
-              private layoutService: LayoutService) {
+    private menuService: NbMenuService,
+    private userService: UserData,
+    private analyticsService: AnalyticsService,
+    private layoutService: LayoutService,
+    private translate: TranslateService) {
+
+    translate.setDefaultLang('en');
   }
 
   ngOnInit() {

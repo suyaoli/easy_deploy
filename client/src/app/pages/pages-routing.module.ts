@@ -38,6 +38,9 @@ const routes: Routes = [{
     path: 'miscellaneous',
     loadChildren: './miscellaneous/miscellaneous.module#MiscellaneousModule',
   }, {
+    path: 'publish',
+    loadChildren: './publish/publish.module#PublishModule',
+  }, {
     path: '',
     redirectTo: 'tables/smart-table',
     pathMatch: 'full',
